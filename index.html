@@ -57,21 +57,18 @@
     .hero p{color:var(--muted);font-size:clamp(15px, 2.3vw, 18px);margin:6px 0 0}
 
     /* Elegant, perfectly centered button */
-    .btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:6px 14px;          /* smaller padding */
-  border-radius:8px;
-  border:1px solid var(--accent);
+   .btn{
+  display:inline-block;
+  padding:2px 4px;       /* minimal padding */
   text-decoration:none;
   color:var(--accent);
-  font-weight:500;
-  font-size:14px;            /* slightly smaller text */
-  letter-spacing:.3px;
-  transition:all .2s ease-in-out;
-  touch-action:manipulation;
-  text-align:center;
+  font-weight:400;
+  font-size:14px;
+  letter-spacing:.2px;
+  transition:color .2s ease-in-out;
+}
+.btn:hover{
+  color:#000;            /* darkens slightly on hover */
 }
     .btn:hover{background:var(--accent);color:#fff}
 
