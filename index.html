@@ -13,7 +13,7 @@
       --ink:#000000;     /* black text */
       --muted:#444444;   /* subtle gray text */
       --bg:#f8f4fb;      /* soft light purple background */
-      --accent:#555555;  /* gray for headings and accents */
+      --accent:#555555;  /* gray for accents */
     }
 
     body{
@@ -25,6 +25,7 @@
       -webkit-text-size-adjust:100%;
       text-rendering:optimizeLegibility;
     }
+
     .container{max-width:1100px;margin:0 auto;padding:24px}
     header{position:sticky;top:0;background:rgba(248,244,251,.95);backdrop-filter:blur(10px);border-bottom:1px solid #ddd;z-index:10}
     .nav{display:flex;align-items:center;justify-content:space-between;gap:16px}
@@ -50,28 +51,26 @@
       color:var(--ink);
       font-weight:400;
       letter-spacing:1px;
-      white-space:nowrap;  /* desktop: single line */
+      white-space:nowrap;  
       overflow:hidden;
       text-overflow:ellipsis;
     }
     .hero p{color:var(--muted);font-size:clamp(15px, 2.3vw, 18px);margin:6px 0 0}
 
-    /* Elegant, perfectly centered button */
-   .btn{
-  display:inline-block;
-  padding:2px 4px;       /* minimal padding */
-  text-decoration:none;
-  color:var(--accent);
-  font-weight:400;
-  font-size:14px;
-  letter-spacing:.2px;
-  transition:color .2s ease-in-out;
-}
-.btn:hover{
-  color:#000;            /* darkens slightly on hover */
-}
-    .btn:hover{background:var(--accent);color:#fff}
+    /* Minimal link-style call button */
+    .btn{
+      display:inline-block;
+      padding:2px 4px;
+      text-decoration:none;
+      color:var(--accent);
+      font-weight:400;
+      font-size:14px;
+      letter-spacing:.2px;
+      transition:color .2s ease-in-out;
+    }
+    .btn:hover{color:#000}
 
+    /* Cards & headings */
     .card{border:1px solid #eee;border-radius:16px;padding:20px;margin-top:32px;background:#fff}
     h2{
       font-family:"Playfair Display",serif;
@@ -79,10 +78,10 @@
       margin:0 0 16px;
       color:var(--accent);
       padding-top:12px;
-      border-top:2px solid #ddd; /* subtle divider */
+      border-top:2px solid #ddd;
     }
 
-    /* Gallery: show FULL photo (no crop) in tiles */
+    /* Gallery */
     .gallery{
       display:grid;
       grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
@@ -90,13 +89,13 @@
     }
     .gallery img{
       width:100%;
-      height:220px;                 /* consistent tile height */
-      object-fit:contain;           /* <-- shows entire photo */
-      background:#fff;              /* letterbox background */
+      height:220px;
+      object-fit:contain;  /* show full photo */
+      background:#fff;
       border-radius:12px;
       border:1px solid #eee;
       display:block;
-      cursor:zoom-in;               /* hint you can tap to zoom */
+      cursor:zoom-in;
     }
     .placeholder{
       display:flex;align-items:center;justify-content:center;
@@ -105,7 +104,7 @@
       font-family:"Playfair Display",serif;font-size:16px
     }
 
-    /* Lightbox (click to enlarge) */
+    /* Lightbox */
     .lightbox{
       position:fixed; inset:0;
       background:rgba(0,0,0,.85);
@@ -124,20 +123,16 @@
     footer{margin-top:56px;border-top:1px solid #ddd;padding:28px 0;color:#666;text-align:center;background:var(--bg)}
     .mini{font-size:12px;color:#888}
 
-    /* ————— Mobile refinements ————— */
+    /* Mobile refinements */
     @media (max-width: 700px){
       .container{padding:18px}
       .nav{flex-wrap:wrap;gap:10px}
       .nav a{margin-left:12px}
       .logo img{height:40px}
       .logo strong{font-size:20px;letter-spacing:1.5px}
-
-      .hero h1{white-space:normal;text-overflow:clip} /* wrap headline nicely on phones */
-      .btn{width:100%;max-width:420px;padding:12px 20px;font-size:16px}
-
+      .hero h1{white-space:normal;text-overflow:clip}
       .gallery img, .placeholder{height:180px}
     }
-
     @media (max-width: 380px){
       .logo strong{font-size:18px}
       .hero p{font-size:14px}
@@ -173,11 +168,8 @@
     <section id="examples" class="card">
       <h2>Examples</h2>
       <div class="gallery">
-        <!-- Your current images -->
         <img src="images/project1.jpg" alt="Dresser">
         <img src="images/project2.jpg" alt="Nightstands">
-
-        <!-- Placeholders -->
         <div class="placeholder">Coming Soon</div>
         <div class="placeholder">Coming Soon</div>
         <div class="placeholder">Coming Soon</div>
